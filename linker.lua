@@ -3,11 +3,8 @@ function load(links)
         http.get(link,function(data)
             func,error=loadstring(data)
 
-            if error then
-                printConsole(Color(255,0,0),"[Failed]",Color(255,255,255),": "..link.." ; ",Color(255,0,0),error)
-                net.start("test")
-                net.writeString(error)
-                net.send()
+            if !func or error then
+                printConsole(Color(255,0,0),"[Failed]",Color(255,255,255),": "..link.." ; ",Color(255,0,0),func,Color(255,255,255)," ; ",error)
             else
                 func()
                     
