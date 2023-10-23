@@ -1,9 +1,15 @@
 function load(links)
     for i,link in pairs(links) do
         http.get(link,function(data)
-            loadstring(data)()
-            
-            printConsole(Color(0,255,0),"[Loaded]",Color(255,255,255),": "..link)
+            func,error=loadstring(data)
+
+            if error then
+                printConsole(Color(255,0,0),"[Failed]",Color(255,255,255),": "..link.." ; ",Color(255,0,0),error)
+            else
+                func()
+                    
+                printConsole(Color(0,255,0),"[Loaded]",Color(255,255,255),": "..link)
+            end
         end)
     end
 end
