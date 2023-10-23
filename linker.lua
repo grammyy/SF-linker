@@ -5,6 +5,9 @@ function load(links)
 
             if error then
                 printConsole(Color(255,0,0),"[Failed]",Color(255,255,255),": "..link.." ; ",Color(255,0,0),error)
+                net.start("test")
+                net.writeString(error)
+                net.send()
             else
                 func()
                     
