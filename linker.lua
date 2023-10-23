@@ -1,5 +1,5 @@
 function load(links)
-    for i,link in pairs(links) do
+    for link,callback in pairs(links) do
         http.get(link,function(data)
             func,error=loadstring(data)
 
@@ -9,6 +9,10 @@ function load(links)
                 func()
                     
                 printConsole(Color(0,255,0),"[Loaded]",Color(255,255,255),": "..link)
+            
+                if callback then
+                    callback()
+                end
             end
         end)
     end
