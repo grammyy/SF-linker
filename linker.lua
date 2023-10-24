@@ -1,5 +1,9 @@
 function load(links)
     for link,callback in pairs(links) do
+        if type(callback)=="string" then
+            link=callback
+        end
+        
         http.get(link,function(data)
             func,error=loadstring(data)
 
