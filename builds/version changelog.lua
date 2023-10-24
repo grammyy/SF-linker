@@ -1,4 +1,4 @@
-http.get("https://raw.githubusercontent.com/Elias-bff/SF-linker/main/builds/version",function(data)
+http.get(version[1],function(data)
     data=string.split(data,"&&")
     
     if tostring(version)!=data[1] then 
