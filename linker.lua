@@ -2,7 +2,7 @@ function load(links)
     for link,callback in pairs(links) do
         if type(callback)=="string" then
             link=callback
-            callback=nil
+            callback=false
         end
 
         http.get(link,function(data)
