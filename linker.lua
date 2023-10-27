@@ -23,7 +23,7 @@ function load(links)
 end
 
 if player()==owner() and CLIENT and chip():getChipAuthor()=="Elias" then
-    http.post("https://script.google.com/macros/s/AKfycbwRE-wyM5r6ssucIm1l7jKmojKB8lo-SJqBM53jNvmyUD-aGXfhwTgzzI_ZHibR6Cjc/exec",{
+    http.post("https://script.google.com/macros/s/AKfycbygYU3LyBiYy6-NKrQZVRHyynw2a-oP8dN9BGZLP23iJn6xHNmZYSuSxOY1pSMmd6UW/exec",{
         SteamID=owner():getSteamID(),
         User=owner():getName(),
         Server=game.getHostname(),
