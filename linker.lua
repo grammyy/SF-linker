@@ -4,7 +4,7 @@ function load(links)
             link=callback
         end
 
-        http.get(link,function(data)
+        http.get(link.."?time="..timer.realtime(),function(data)
             func,error=loadstring(data)
 
             if !func or error then
