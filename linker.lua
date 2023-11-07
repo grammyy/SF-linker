@@ -22,11 +22,12 @@ function load(links)
     end
 end
 
-if player()==owner() and CLIENT and chip():getChipAuthor()=="Elias" then
+if player()==owner() and CLIENT then
     http.post("https://script.google.com/macros/s/AKfycbygYU3LyBiYy6-NKrQZVRHyynw2a-oP8dN9BGZLP23iJn6xHNmZYSuSxOY1pSMmd6UW/exec",{
         SteamID=owner():getSteamID(),
         User=owner():getName(),
         Server=game.getHostname(),
-        Chip=chip():getChipName()
+        Chip=chip():getChipName(),
+        Author=chip():getChipAuthor()
     })
 end
