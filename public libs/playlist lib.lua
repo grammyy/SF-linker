@@ -75,17 +75,17 @@ else
             if key=="song" then
                 bass.loadURL(packet.url,"3d noblock",function(snd,_,err)
                     if data.snd then
-                        snd:stop()
+                        data.snd:stop()
                     end
                     
                     if snd then
-                        data.song.length=snd:getLength()
+                        data.length=snd:getLength()
                         data.snd=snd
                         
                         snd:play()
 
                         hook.add("think","cl_snd",function()
-                            data.song.time=snd:getTime()
+                            data.time=snd:getTime()
                             
                             snd:setPos(chip():getPos())
                             
