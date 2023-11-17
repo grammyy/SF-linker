@@ -79,8 +79,8 @@ else
                     end
                     
                     if snd then
-                        data.length=snd:getLength()
                         data.snd=snd
+                        data.length=data.snd:getLength()
                         
                         data.snd:play()
 
