@@ -11,7 +11,7 @@ function load(links)
             func,error=loadstring(data)
 
             if (!func or error) and CLIENT then
-                printConsole(Color(255,0,0),"[Failed: "..SERVER and "SERVER" or "CLIENT".."]",Color(255,255,255),": "..link.." ; ",Color(255,0,0),func,Color(255,255,255)," ; ",error)
+                printConsole(Color(255,0,0),"[Failed: "..(SERVER and "SERVER" or "CLIENT").."]",Color(255,255,255),": "..link.." ; ",Color(255,0,0),func,Color(255,255,255)," ; ",error)
             else
                 func()
 
@@ -21,7 +21,7 @@ function load(links)
                     callback()
                 end
                     
-                printConsole(Color(0,255,0),"[Loaded: "..SERVER and "SERVER" or "CLIENT".."]",Color(255,255,255),": "..link)
+                printConsole(Color(0,255,0),"[Loaded: "..(SERVER and "SERVER" or "CLIENT").."]",Color(255,255,255),": "..link)
             end
         end)
     end
