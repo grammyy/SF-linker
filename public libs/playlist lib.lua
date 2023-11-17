@@ -1,7 +1,7 @@
 --@name Playlist lib
 --@author Elias
 
-function queue(time,func,data)
+function queue(time,func)
     if !waitlist[time] then
         waitlist[time]={}
         local list=waitlist[time]
