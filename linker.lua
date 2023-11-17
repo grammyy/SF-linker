@@ -7,7 +7,7 @@ function load(links)
         end
 
         http.get(link.."?time="..timer.realtime(),function(data)
-            local name=string.split(link,"/")
+            local name=string.split(http.urlDecode(link),"/")
             func,error=loadstring(data)
 
             if !func or error then
