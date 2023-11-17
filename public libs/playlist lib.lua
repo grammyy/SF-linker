@@ -49,7 +49,7 @@ if SERVER then
         end)
     end)
 else
-    local data={
+    data={
         song={
             url="https://cdn.discordapp.com/attachments/1120967741801762919/1138669400698920970/YT2mp3.info_-_Out_of_Touch_128kbps.mp3",
             time="5:44",
