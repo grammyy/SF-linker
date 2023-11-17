@@ -44,8 +44,6 @@ if SERVER then
             net.start("cl_request")
             net.writeEntity(ply)
             net.send(owner(),false)
-            
-            print("new client: "..ply:getName())
         end)
     end)
 else
@@ -121,8 +119,6 @@ else
                 songs=data.songs,
                 song=data.song
             },{ply})
-            
-            print("request successful by: "..ply:getName())
         end)
         
         netSend(data)
