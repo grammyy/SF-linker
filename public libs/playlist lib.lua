@@ -76,6 +76,8 @@ else
                 bass.loadURL(packet.url,"3d noblock",function(snd,_,err)
                     if data.snd then
                         data.snd:stop()
+                        
+                        hook.remove("think","cl_snd")
                     end
                     
                     if snd then
@@ -92,6 +94,10 @@ else
                             if sndFFT then
                                 sndFFT(snd:getFFT(1))
                             end
+                        end)
+                        
+                        timer.simple(data.length,function()
+                            hook.remove("think","cl_snd")
                         end)
                     else
                         print(Color(255,0,0),"[Failed]",Color(255,255,255),": "..err)
