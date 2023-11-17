@@ -10,18 +10,18 @@ function load(links)
             local name=string.split(http.urlDecode(link),"/")
             func,error=loadstring(data)
 
-            if !func or error then
-                printConsole(Color(255,0,0),"[Failed]",Color(255,255,255),": "..link.." ; ",Color(255,0,0),func,Color(255,255,255)," ; ",error)
+            if (!func or error) and CLIENT then
+                printConsole(Color(255,0,0),"[Failed: "..SERVER and "SERVER" or "CLIENT".."]",Color(255,255,255),": "..link.." ; ",Color(255,0,0),func,Color(255,255,255)," ; ",error)
             else
                 func()
-                    
-                printConsole(Color(0,255,0),"[Loaded]",Color(255,255,255),": "..link)
-            
+
                 loaded[name[#name]]=true
             
                 if isfunction(callback) then
                     callback()
                 end
+                    
+                printConsole(Color(0,255,0),"[Loaded: "..SERVER and "SERVER" or "CLIENT".."]",Color(255,255,255),": "..link)
             end
         end)
     end
