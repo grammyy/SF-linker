@@ -1,3 +1,5 @@
+loaded={}
+
 function load(links)
     for link,callback in pairs(links) do
         if type(callback)=="string" then
@@ -5,6 +7,7 @@ function load(links)
         end
 
         http.get(link.."?time="..timer.realtime(),function(data)
+            local name=string.split(link,"/")
             func,error=loadstring(data)
 
             if !func or error then
@@ -13,6 +16,8 @@ function load(links)
                 func()
                     
                 printConsole(Color(0,255,0),"[Loaded]",Color(255,255,255),": "..link)
+            
+                loaded[name[#name]]=true
             
                 if isfunction(callback) then
                     callback()
