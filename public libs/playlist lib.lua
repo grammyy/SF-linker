@@ -82,10 +82,10 @@ else
                         data.length=snd:getLength()
                         data.snd=snd
                         
-                        snd:play()
+                        data.snd:play()
 
                         hook.add("think","cl_snd",function()
-                            data.time=snd:getTime()
+                            data.time=data.snd:getTime()
                             
                             snd:setPos(chip():getPos())
                             
