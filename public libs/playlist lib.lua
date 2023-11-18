@@ -27,9 +27,9 @@ if SERVER then
     
     net.receive("sv_sync",function(_,ply)
         local packet=net.readTable()
-        
+        packet.sender=ply:getName()
+
         net.start("cl_sync")
-        net.writeString(ply:getName())
         net.writeTable(packet)
         net.send(packet[2] or nil)
     end)
@@ -55,8 +55,6 @@ else
     end
     
     net.receive("cl_sync",function()
-        data.sender=net.readString()
-        
         for key,packet in pairs(net.readTable()) do
             data[key]=packet
             
