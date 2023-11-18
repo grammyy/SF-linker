@@ -95,7 +95,7 @@ else
                 end)
             end
             
-            if key=="time" then
+            if key=="time" and data.snd then
                 data.snd:setTime(packet)
             end
         end
