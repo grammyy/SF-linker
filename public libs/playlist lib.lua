@@ -107,12 +107,12 @@ else
         net.receive("cl_request",function()
             local ply=net.readEntity()
             
-            netSend({
+            netSend(table.add({
                 songs=data.songs,
                 song=data.song
-            },{ply})
+            },{enviorment or {}}),{ply})
         end)
-        
+
         netSend(data)
     end
 end
