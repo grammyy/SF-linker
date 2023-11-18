@@ -27,11 +27,10 @@ if SERVER then
     
     net.receive("sv_sync",function(_,ply)
         local packet=net.readTable()
+        packet.sender=ply
         
         net.start("cl_sync")
-        net.writeTable(table.add(packet[1],{
-            sender=ply
-        }))
+        net.writeTable(packet)
         net.send(packet[2] or nil)
     end)
     
