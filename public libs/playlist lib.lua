@@ -30,7 +30,7 @@ if SERVER then
         
         net.start("cl_sync")
         net.writeTable(packet)
-        net.writeString(ply:getString())
+        net.writeString(ply:getName())
         net.send(packet[2] or nil)
     end)
     
