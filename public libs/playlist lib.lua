@@ -29,8 +29,8 @@ if SERVER then
         local packet=net.readTable()
         
         net.start("cl_sync")
-        net.writeTable(packet)
         net.writeString(ply:getName())
+        net.writeTable(packet)
         net.send(packet[2] or nil)
     end)
     
