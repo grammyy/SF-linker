@@ -27,10 +27,10 @@ if SERVER then
     
     net.receive("sv_sync",function(_,ply)
         local packet=net.readTable()
-        packet.sender=ply:getName()
+        packet[1].sender=ply:getName()
 
         net.start("cl_sync")
-        net.writeTable(packet)
+        net.writeTable(packet[1])
         net.send(packet[2] or nil)
     end)
     
@@ -57,7 +57,7 @@ else
     net.receive("cl_sync",function()
         for key,packet in pairs(net.readTable()) do
             data[key]=packet
-            
+
             if key=="songs" then
                 printConsole(Color(0,255,0),"[Initialized]",Color(255,255,255),": Loaded "..#packet.." songs.")
             end
