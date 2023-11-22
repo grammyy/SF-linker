@@ -25,7 +25,6 @@ function load(links)
         end
 
         queue(function()
-            print(link)
             http.get(link.."?time="..timer.realtime(),function(data)
                 local name=string.split(http.urlDecode(link),"/")
                 func,error=loadstring(data)
