@@ -22,7 +22,7 @@ function load(links)
             link=callback
         end
 
-        queue(1/3,function()
+        queue(function()
             http.get(link.."?time="..timer.realtime(),function(data)
                 local name=string.split(http.urlDecode(link),"/")
                 func,error=loadstring(data)
