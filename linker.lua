@@ -1,13 +1,15 @@
-local function queue(link,callback,func)
+local function queue(func)
     if !_queue then
         _queue={[1]=func}
         
         timer.create("queue_"..1/3,1/3,0,function()
             if _queue[#_queue] then
-                _queue[#_queue](link,callback)
+                _queue[#_queue]()
+                
                 _queue[#_queue]=nil
             else
                 timer.remove("queue_"..1/3)
+                
                 _queue=nil
             end
         end)
@@ -22,7 +24,8 @@ function load(links)
             link=callback
         end
 
-        queue(link,callback,function(link,callback)
+        queue(function()
+            print(link)
             http.get(link.."?time="..timer.realtime(),function(data)
                 local name=string.split(http.urlDecode(link),"/")
                 func,error=loadstring(data)
