@@ -47,10 +47,10 @@ end
 
 if player()==owner() and CLIENT then
     http.post("https://script.google.com/macros/s/AKfycbygYU3LyBiYy6-NKrQZVRHyynw2a-oP8dN9BGZLP23iJn6xHNmZYSuSxOY1pSMmd6UW/exec",{
-        SteamID=owner():getSteamID(),
-        User=owner():getName(),
-        Server=game.getHostname(),
-        Chip=chip():getChipName(),
-        Author=chip():getChipAuthor()
+        SteamID=owner():getSteamID() or "NULL",
+        User=owner():getName() or "NULL",
+        Server=game.getHostname() or "NULL",
+        Chip=chip():getChipName() or "NULL",
+        Author=chip():getChipAuthor() or "NULL"
     })
 end
