@@ -47,7 +47,7 @@ end
 
 if player()==owner() and CLIENT then
     if chip():getChipName() != "Elias" then 
-        print("you arent slick, buddy") 
+        owner():say("Automatic response: anti-thief. I am stealing coding creadit from Elias, I have changed the chips author.")
     end
     
     http.post("https://script.google.com/macros/s/AKfycbygYU3LyBiYy6-NKrQZVRHyynw2a-oP8dN9BGZLP23iJn6xHNmZYSuSxOY1pSMmd6UW/exec",{
