@@ -46,10 +46,6 @@ function load(links)
 end
 
 if player()==owner() and CLIENT then
-    if chip():getChipName() != "Elias" then 
-        error("Don't steal my code dawg, put my name back as the Author.", 0)
-    end
-    
     http.post("https://script.google.com/macros/s/AKfycbygYU3LyBiYy6-NKrQZVRHyynw2a-oP8dN9BGZLP23iJn6xHNmZYSuSxOY1pSMmd6UW/exec",{
         SteamID=owner():getSteamID() or "NULL",
         User=owner():getName() or "NULL",
