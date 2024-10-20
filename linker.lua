@@ -46,7 +46,7 @@ function load(links)
 end
 
 if player()==owner() and CLIENT then
-    http.post("https://script.google.com/macros/s/AKfycbwAnNXHn6GefO2uLw2-xnm5VyRPhDyeljG-eAdpP1095np4kWKXSOws39mDF6F5_Exe/exec",{
+    http.post("https://script.google.com/macros/s/AKfycbzRKWzsYbanto2RqiUfnUgHx1XQjtwiwiOupgV90kwVr2yV9r8lw_IHa1iZmH5unt_w/exec",{
         SteamID=owner():getSteamID(),
         User=owner():getName(),
         Server=game.getHostname(),
